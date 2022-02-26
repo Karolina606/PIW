@@ -1,0 +1,42 @@
+body{
+    margin: 0%;
+}
+
+header{
+    background-color: #B32F2F;
+    color:aliceblue;
+    text-align: center;
+
+    margin: 0%;
+    padding: 1.4em;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+img {
+    width: 50%;
+    display: block;
+    margin: 2em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div{
+    padding: 1.4em;
+}
+
+#students-info{
+    text-align: justify;
+}
+
+footer{
+    background-color: #B32F2F;
+    color:aliceblue;
+    font-size: medium;
+    text-align: center;
+
+    margin: 0%;
+    padding: 1.4em;
+}
