@@ -30,11 +30,11 @@ nav > ul{
     width: fit-content;
 }
 
-nav > li {
+nav li {
     float: left;
 }
 
-nav > li > a {
+nav li a {
     display: block;
     color: white;
     text-align: center;
@@ -42,7 +42,7 @@ nav > li > a {
     text-decoration: none;
 }
 
-nav > li > a:hover {
+nav li a:hover {
     color: black;
     background-color: #2fb3b3;
 }
@@ -63,7 +63,7 @@ div{
 }
 
 /* Justowanie tekstu w info */
-#info{
+.info{
     text-align: justify;
 }
 
