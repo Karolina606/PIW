@@ -21,7 +21,7 @@ nav{
     background-color: #71b32f;
 }
 
-nav ul{
+nav > ul{
     list-style-type: none;
     margin: 0;
     margin-left: auto;
@@ -30,11 +30,11 @@ nav ul{
     width: fit-content;
 }
 
-nav li {
+nav > li {
     float: left;
 }
 
-nav li a {
+nav > li > a {
     display: block;
     color: white;
     text-align: center;
@@ -42,7 +42,7 @@ nav li a {
     text-decoration: none;
 }
 
-nav li a:hover {
+nav > li > a:hover {
     color: black;
     background-color: #2fb3b3;
 }
@@ -68,7 +68,7 @@ div{
 }
 
 /* Stylizacja tabelki */
-#classes-table table, th, td{
+#classes-table > table, th, td{
     border: 1px solid black;
     margin-left: auto;
     margin-right: auto;
@@ -85,6 +85,6 @@ footer{
     padding: 1.4em;
 }
 
-footer a{
+footer > a{
     color: black;
 }
