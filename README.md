@@ -1,4 +1,4 @@
-### Projektowanie interface'ów webowych
+# Projektowanie interface'ów webowych
 Repozytrium laboratoriów semestr 6.
 
 ## Lab 1
