@@ -1,0 +1,61 @@
+body {
+    margin: 3em;
+}
+
+#todo-lists{
+    padding-top: 1.5em;
+}
+
+.todo-list{
+    padding-top: 1.5em;
+}
+
+.activity-text{
+    width: fit-content;
+    display: inline-block;
+    margin: 0.3em;
+}
+
+.date-of-achivement-para{
+    width: fit-content;
+    display: inline-block;
+    margin: 0.3em;
+}
+
+.remove-btn{
+    width: fit-content;
+    display: inline-block;
+    margin: 0.3em;
+}
+
+#modal{
+    display: none;
+    z-index: 1;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    /* background-color: rgba(0,0,0); */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.list-header{
+    cursor:pointer;
+}
+
+#activity-input{
+    border-color: black;
+}
+
+.list-header{
+    float: left;
+    margin: 0 0.3em 0 0.3em;
+}
+
+#filter{
+    margin: 0.3em 0 0.3em 0;
+}
+
+#case-sensitive-lbl{
+    margin-left: 0.3em;
+}
