@@ -14,4 +14,4 @@ Drugie zadanie laboratoryjne. Implementacja listy ToDo (HTML + CSS + JS + JQuery
 ## Lab 3
 Trzecie zadanie laboratoryjne. Strona pozwalająca studentom znaleźć grupę projektową (React).
 
-* Link GitHub Pages https://karolina606.github.io/PIW/lab3/lab3.html
+* Link GitHub Pages https://karolina606.github.io/PIW/lab3/
