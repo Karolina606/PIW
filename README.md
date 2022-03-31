@@ -10,3 +10,8 @@ Pierwsze zadanie laboratoryjne. Prosta strona internetowa (HTML + CSS) o wyimagi
 Drugie zadanie laboratoryjne. Implementacja listy ToDo (HTML + CSS + JS + JQuery).
 
 * Link GitHub Pages https://karolina606.github.io/PIW/lab2/lab2.html
+
+## Lab 3
+Trzecie zadanie laboratoryjne. Strona pozwalająca studentom znaleźć grupę projektową (React).
+
+* Link GitHub Pages https://karolina606.github.io/PIW/lab3/lab3.html
