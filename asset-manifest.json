@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PIW/lab3/static/css/main.3bda4340.css",
+    "main.js": "/PIW/lab3/static/js/main.d991d711.js",
+    "static/js/787.90882590.chunk.js": "/PIW/lab3/static/js/787.90882590.chunk.js",
+    "index.html": "/PIW/lab3/index.html",
+    "main.3bda4340.css.map": "/PIW/lab3/static/css/main.3bda4340.css.map",
+    "main.d991d711.js.map": "/PIW/lab3/static/js/main.d991d711.js.map",
+    "787.90882590.chunk.js.map": "/PIW/lab3/static/js/787.90882590.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bda4340.css",
+    "static/js/main.d991d711.js"
+  ]
+}
