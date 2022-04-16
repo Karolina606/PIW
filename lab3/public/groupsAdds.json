@@ -1,0 +1,65 @@
+{
+    "all":[       
+        {
+            "add_class_name":"RiPO", 
+             "add_students":[
+            {"name":"Kola K.", "email":"kol23@cos.pl"}, 
+            {"name":"Michał W.", "email":"mich23@cos.pl"},
+            {"name":"Monika F.", "email":"mon23@cos.pl"},
+            {"name":"Robert F.", "email":"rob23@cos.pl"}],
+            "add_description":"Jesteśmy słabi, szukamy bohatera który nas uratuje.", 
+            "add_tags":"RIPO, RiPO, python, android"
+        },
+
+        {
+            "add_class_name":"PIWo", 
+            "add_students":[
+            {"name":"Maciek K.", "email":"maciek23@cos.pl"}, 
+            {"name":"Justyna K.", "email":"just3@cos.pl"}],
+            "add_description":"Wspólnie na pewno coś zdziałamy.", 
+            "add_tags":"PIW, PIWo, JS, CSS, HTML"
+        },
+
+        {
+            "add_class_name":"UCiSW2", 
+            "add_students":[
+            {"name":"Jan K.", "email":"jan23@cos.pl"}, 
+            {"name":"Jola K.", "email":"jol23@cos.pl"},
+            {"name":"Rafał F.", "email":"raf23@cos.pl"}],
+            "add_description":"Jesteśmy słabi, szukamy bohatera który nas uratuje.", 
+            "add_tags":"UCiSW2, ucisw, vhdl, uklady cyfrowe"
+        }
+
+    ],
+    "all_to_show": [
+        {
+            "add_class_name":"RiPO", 
+            "add_students":[
+            {"name":"Kola K.", "email":"kol23@cos.pl"}, 
+            {"name":"Michał W.", "email":"mich23@cos.pl"},
+            {"name":"Monika F.", "email":"mon23@cos.pl"},
+            {"name":"Robert F.", "email":"rob23@cos.pl"}],
+            "add_description":"Jesteśmy słabi, szukamy bohatera który nas uratuje.", 
+            "add_tags":"RIPO, RiPO, python, android"
+        },
+
+        {  
+            "add_class_name":"PIWo", 
+            "add_students":[
+            {"name":"Maciek K.", "email":"maciek23@cos.pl"}, 
+            {"name":"Justyna K.", "email":"just3@cos.pl"}],
+            "add_description":"Wspólnie na pewno coś zdziałamy.", 
+            "add_tags":"PIW, PIWo, JS, CSS, HTML"
+        },
+
+        {
+            "add_class_name":"UCiSW2", 
+            "add_students":[
+            {"name":"Jan K.", "email":"jan23@cos.pl"}, 
+            {"name":"Jola K.", "email":"jol23@cos.pl"},
+            {"name":"Rafał F.", "email":"raf23@cos.pl"}],
+            "add_description":"Jesteśmy słabi, szukamy bohatera który nas uratuje.", 
+            "add_tags":"UCiSW2, ucisw, vhdl, uklady cyfrowe"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "accounts":[       
+        {
+            "name":"Jan K.", 
+            "email":"jan23@cos.pl",
+            "password":"123"
+        },
+        {
+            "name":"Maciek K.", 
+            "email":"maciek@cos.pl",
+            "password":"123"
+        },
+        {
+            "name":"Julia F.", 
+            "email":"julia.f@cos.pl",
+            "password":"123"
+        }
+    ]
+}

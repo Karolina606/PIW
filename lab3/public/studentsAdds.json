@@ -1,0 +1,121 @@
+{
+    "all":
+        [   
+            {
+                "add_class_name": "PIWo", 
+                "add_student_name": "Maciek K.", 
+                "add_description": "Szukam osoby chętnej do wspólnej pracy przy projekcie z PIW. Zapraszam również na PIWo.", 
+                "add_tags": "PIW, PIWo, JS, CSS, HTML", 
+                "add_email":"maciek@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name":"UCiSW2", 
+                "add_student_name":"Robert N.", 
+                "add_description":"Nie umiem w układy cyfrowe, dlatego szukam kompetentnej dobrej duszy.", 
+                "add_tags":"UCiSW, ucisk, VHDL", 
+                "add_email":"robert.k@gm.com",
+                "picture": ""
+            },
+            {
+                "add_class_name":"SO2", 
+                "add_student_name":"Julia F.", 
+                "add_description":"Chcę synchronizować z Tobą swoje wątki", 
+                "add_tags":"SO2, systemy operacyjne, procesy, wątki", 
+                "add_email":"julia.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name":"Algebra", 
+                "add_student_name":"Błażej F.", 
+                "add_description":"Program pomagający w algebrze.", 
+                "add_tags" :"algebra, matma, matematyka", 
+                "add_email" :"blazej.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name": "BD2", 
+                "add_student_name": "Miłosz Sz.", 
+                "add_description": "Do zrobienia jest nowa baza danych dla ZUS.", 
+                "add_tags": "bazy danych, oracle, sql, java, spring boot", 
+                "add_email": "milosz.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name": "Algebra", 
+                "add_student_name": "Julian Sz.", 
+                "add_description": "Duży zbiór zaań algebraicznych do zrobienia na spółę", 
+                "add_tags": "algebra, matma, matematyka", 
+                "add_email": "juliusz.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name": "WF", 
+                "add_student_name": "Mariusz Ł.", 
+                "add_description": "Prezentacja z WF w parach, pilates 7:30 piątek", 
+                "add_tags": "wf, pilates, prezentacja, piatek 7:30", 
+                "add_email": "mariusz.f@cos.pl",
+                "picture": ""
+            }
+        ],
+
+    "all_to_show":
+        [   
+            {
+                "add_class_name": "PIWo", 
+                "add_student_name": "Maciek K.", 
+                "add_description": "Szukam osoby chętnej do wspólnej pracy przy projekcie z PIW. Zapraszam również na PIWo.", 
+                "add_tags": "PIW, PIWo, JS, CSS, HTML", 
+                "add_email":"maciek@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name":"UCiSW2", 
+                "add_student_name":"Robert N.", 
+                "add_description":"Nie umiem w układy cyfrowe, dlatego szukam kompetentnej dobrej duszy.", 
+                "add_tags":"UCiSW, ucisk, VHDL", 
+                "add_email":"robert.k@gm.com",
+                "picture": ""
+            },
+            {
+                "add_class_name":"SO2", 
+                "add_student_name":"Julia F.", 
+                "add_description":"Chcę synchronizować z Tobą swoje wątki", 
+                "add_tags":"SO2, systemy operacyjne, procesy, wątki", 
+                "add_email":"julia.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name":"Algebra", 
+                "add_student_name":"Błażej F.", 
+                "add_description":"Program pomagający w algebrze.", 
+                "add_tags" :"algebra, matma, matematyka", 
+                "add_email" :"blazej.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name": "BD2", 
+                "add_student_name": "Miłosz Sz.", 
+                "add_description": "Do zrobienia jest nowa baza danych dla ZUS.", 
+                "add_tags": "bazy danych, oracle, sql, java, spring boot", 
+                "add_email": "milosz.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name": "Algebra", 
+                "add_student_name": "Julian Sz.", 
+                "add_description": "Duży zbiór zaań algebraicznych do zrobienia na spółę", 
+                "add_tags": "algebra, matma, matematyka", 
+                "add_email": "juliusz.f@cos.pl",
+                "picture": ""
+            },
+            {
+                "add_class_name": "WF", 
+                "add_student_name": "Mariusz Ł.", 
+                "add_description": "Prezentacja z WF w parach, pilates 7:30 piątek", 
+                "add_tags": "wf, pilates, prezentacja, piatek 7:30", 
+                "add_email": "mariusz.f@cos.pl",
+                "picture": ""
+            }
+        ]
+}

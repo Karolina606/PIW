@@ -1,34 +1,23 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const MessageSender = (props) => {
-    // const setAdds = props.setAdds;
-    // const adds = props.announcementsState;
+    const messageTextAreaRef = useRef();
+    const nameRef = useRef();
+    const emailRef = useRef();
 
-
-    const [inputs, setInputs] = useState({ 
-        inputName:"",
-        inputEmail:"",
-        textareaMessage:"",
+    useEffect(()=>{
+        messageTextAreaRef.current.focus();
     });
-    
-    const handleChange = (event) => {
-        // event.preventDefault();
-
-        const name = event.target.id;
-        const value = event.target.value;
-        console.log({value});
-        setInputs(input => ({...inputs, [name]: value}));
-    }
 
     const handleAddFormSubmit = (event) => {
         event.preventDefault();
 
-        if (inputs.inputName !== "" &&
-            inputs.inputEmail !== "" &&
-            inputs.textareaMessage !== ""){
+        if (nameRef.current.value !== "" &&
+            emailRef.current.value !== "" &&
+            messageTextAreaRef.current.value !== ""){
 
             toast.success("Twoja wiadomość została wysłana zostało dodane", {
                 position: "bottom-left",
@@ -40,12 +29,10 @@ const MessageSender = (props) => {
                 progress: undefined,
             });
 
-            setInputs({ 
-                inputName:"",
-                inputEmail:"",
-                textareaMessage:"",
-            });
 
+            nameRef.current.value = "";
+            emailRef.current.value = "";
+            messageTextAreaRef.current.value = "";
 
         }else{
             toast.error('Musisz uzupełnić wszyskie pola, aby wysłać wiadomość!', {
@@ -63,24 +50,24 @@ const MessageSender = (props) => {
 
     return <>
         <div id="message-sender-form">
-            <h2 class="subpage-header">Wyślij wiadomość do wybranej grupy</h2>
+            <h2 className="subpage-header">Wyślij wiadomość do wybranej grupy</h2>
             <form onSubmit={handleAddFormSubmit}>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="inputName">Imię</label>
-                    <input type="text" class="form-control" id="inputName" onChange={handleChange}
-                    placeholder="Jan K." value={inputs.inputName || ""}></input>
+                    <input type="text" className="form-control" id="inputName" ref={nameRef} onChange={(e)=>{nameRef.current.value = e.target.value}}
+                    placeholder="Jan K."></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" onChange={handleChange}
-                    placeholder="Email" value={inputs.inputEmail || ""}></input>
+                    <input type="email" className="form-control" id="inputEmail" ref={emailRef}  aria-describedby="emailHelp" onChange={(e)=>{emailRef.current.value = e.target.value}}
+                    placeholder="Email"></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="textareaMessage">Twoja wiadomość</label>
-                    <textarea class="form-control" id="textareaMessage" rows="3" onChange={handleChange}
-                    placeholder="Cześć!, bardzo chciałbym z Wami pracować ..." value={inputs.textareaMessage || ""}></textarea>
+                    <textarea className="form-control" id="textareaMessage" ref={messageTextAreaRef} rows="3" onChange={(e)=>{messageTextAreaRef.current.value = e.target.value}}
+                    placeholder="Cześć!, bardzo chciałbym z Wami pracować ..." ></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+                <button type="submit" className="btn btn-primary">Wyślij wiadomość</button>
             </form>
 
             <ToastContainer

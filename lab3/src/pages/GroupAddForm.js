@@ -126,44 +126,44 @@ class GroupAddForm extends React.Component {
 
     render (){
         return <>
-            <div class="add-form">
-                <h2 class="subpage-header">Dodaj ogłoszenie swojej grupy</h2>
+            <div className="add-form">
+                <h2 className="subpage-header">Dodaj ogłoszenie swojej grupy</h2>
                 <form onSubmit={this.handleAddFormSubmit}>
                     
                         {this.state.numberOfStudents.map(student => (  
                             <>
-                            <div class="student-template">
-                                <div class="form-group student-template-element">
+                            <div className="student-template">
+                                <div className="form-group student-template-element">
                                     <label for="inputName">Imię</label>
-                                    <input type="text" class="form-control" id={"inputName" + student} onChange={this.handleChange}
+                                    <input type="text" className="form-control" id={"inputName" + student} onChange={this.handleChange}
                                     placeholder="Jan K." value={eval("this.state.inputName" + student) || ""}></input>
                                 </div>
-                                <div class="form-group student-template-element">
+                                <div className="form-group student-template-element">
                                     <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id={"inputEmail" + student} aria-describedby="emailHelp" onChange={this.handleChange}
+                                    <input type="email" className="form-control" id={"inputEmail" + student} aria-describedby="emailHelp" onChange={this.handleChange}
                                     placeholder="Email" value={eval("this.state.inputEmail" + student) || ""}></input>
                                 </div>
                             </div>
                             </>
                         ))} 
                     
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="inputClassName">Nazwa kursu</label>
-                        <input type="text" class="form-control" id="inputClassName" onChange={this.handleChange}
+                        <input type="text" className="form-control" id="inputClassName" onChange={this.handleChange}
                         placeholder="Nazwa kursu" value={this.state.inputClassName || ""}></input>
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="textareaDescription">Opis projektu</label>
-                        <textarea class="form-control" id="textareaDescription" rows="3" onChange={this.handleChange}
+                        <textarea className="form-control" id="textareaDescription" rows="3" onChange={this.handleChange}
                         placeholder="Opis" value={this.state.textareaDescription || ""}></textarea>
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="inputTags">Tagi</label>
-                        <input type="text" class="form-control" id="inputTags" onChange={this.handleChange}
+                        <input type="text" className="form-control" id="inputTags" onChange={this.handleChange}
                         placeholder="np.: JS, C++, HTML, Python" value={this.state.inputTags || ""}></input>
                     </div>
-                    <button type="submit" class="btn btn-primary">Dodaj</button>
-                    <button type="button" class="btn btn-primary" onClick={this.handleAddStudent}>Dodaj następnego studenta</button>
+                    <button type="submit" className="btn btn-primary">Dodaj</button>
+                    <button type="button" className="btn btn-primary" onClick={this.handleAddStudent}>Dodaj następnego studenta</button>
                 </form>
 
                 <ToastContainer

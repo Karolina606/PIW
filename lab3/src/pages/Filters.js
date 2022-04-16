@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+// import AllAccountsContext from "../contexts/AllAccountsContext";
 
 
 const Filters = (props) => {
     const setAdds = props.setAdds;
     const adds = props.announcementsState;
+    // const [accounts, setAccounts] = useContext(AllAccountsContext);
 
     const [inputs, setInputs] = useState({ 
         inputDescriptionIncludes:"",
@@ -17,6 +19,7 @@ const Filters = (props) => {
         const name = event.target.id;
         const value = event.target.value;
         setInputs(input => ({...inputs, [name]: value}));
+        // console.log({accounts});
     }
 
     const handleFilterSubmit = (event) => {
@@ -82,30 +85,30 @@ const Filters = (props) => {
 
     return <div id="filters">
         <h2>Filtry</h2>
-            <div class="announcment-browser">
+            <div className="announcment-browser">
                 <form onSubmit={handleFilterSubmit}>
-                    <div class="input-group mb-3">
+                    <div className="input-group mb-3">
                         <input 
-                            type="text" class="form-control" 
+                            type="text" className="form-control" 
                             placeholder="Opis zawiera"
                             id="inputDescriptionIncludes"
                             value={inputs.inputDescriptionIncludes || ""} 
                             onChange={handleChange}></input>
                         <input 
-                            type="text" class="form-control" 
+                            type="text" className="form-control" 
                             placeholder="Tagi" 
                             id="inputTags"
                             value={inputs.inputTags || ""} 
                             onChange={handleChange}></input>
                         <input 
-                            type="text" class="form-control" 
+                            type="text" className="form-control" 
                             placeholder="Przedmiot" 
                             id="inputClassName"
                             value={inputs.inputClassName || ""} 
                             onChange={handleChange}></input>
-                        <div class="input-group-append">
+                        <div className="input-group-append">
                             <button 
-                                class="btn btn-outline-secondary" 
+                                className="btn btn-outline-secondary" 
                                 type="submit" 
                                 id="button-addon2">
                                     Szukaj
