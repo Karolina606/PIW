@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AllAccountsContext from "../contexts/AllAccountsContext";
+import { registerWithEmailAndPassword } from "../firebase/users";
+import { getAuth, updateProfile } from "firebase/auth";
 
 const SignIn= (props) => {
     const [accounts, setAccounts] = useContext(AllAccountsContext);
@@ -33,15 +35,15 @@ const SignIn= (props) => {
             const email = passes.inputEmail;
             const password = passes.inputPassword;
 
-
-            // axios.get("http://localhost:3000/PIW/lab3/accounts.json")
-            // .then(res => {
-            //     let allAccounts = res.data;
-            // accounts.append();
+            
+            const auth = getAuth();
+        
             
             let allAccounts = [accounts];
             allAccounts.concat(allAccounts, {"name":{name}, "email":{email}, "password":{password}});
             setAccounts(allAccounts);
+
+            registerWithEmailAndPassword(passes.inputName, passes.inputEmail, passes.inputPassword);
 
             console.log({accounts});
                 // axios.post('http://localhost:3000/PIW/lab3/accounts.json', accounts)

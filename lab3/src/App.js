@@ -21,12 +21,14 @@ import AccountContext from './contexts/AccountContext';
 import AllAccountsContext from './contexts/AllAccountsContext';
 import { useReducer } from 'react';
 import { reducer, initState, ReducerContext } from './contexts/ReducerContext';
+import MyAdds from './pages/MyAdds';
 
 
 // import {getAuth} from "firebase/auth"
 // import { auth } from './firebase/init';
 // import {useAuthState} from "react-firebase-hooks/auth"
 // import {logout} from "./firebase/users"
+import { getAllAdds, setAdds } from './firebase/adds';
 
 function App() {
     const [adds, setAdds] = useState({});
@@ -55,6 +57,15 @@ function App() {
                     });
                     
                 }
+                getAllAdds().then(
+                    listOfAdds => {
+                        allStudents.all = allStudents.all.concat(listOfAdds);
+                        allStudents.all_to_show = allStudents.all_to_show.concat(listOfAdds);
+
+                        console.log({listOfAdds});
+                        console.log({allStudents});   
+                    });
+
                 setAdds(allStudents);
             });
 
@@ -112,6 +123,7 @@ function App() {
                                 <Route path="signIn" element={<SignIn />} />
                                 <Route path="student" element={<Student />} />
                                 <Route path="login_v2" element={<Loginv2 />} />
+                                <Route path="my_adds" element={<MyAdds />} />
                                 <Route path="*" element={<NoPage />} />
                             </Route>
                         </Routes>

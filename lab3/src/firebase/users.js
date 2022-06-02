@@ -8,6 +8,7 @@ import {
     createUserWithEmailAndPassword,
     sendPasswordResetEmail,
     signOut,
+    updateProfile
 } from "firebase/auth";
 
 import {
@@ -67,22 +68,31 @@ export const logInWithGithub = async () => {
 };
 
 
-// 
+export const registerWithEmailAndPassword = async (name, email, password) => {
+    try {
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        const user = res.user;
+        const q = doc(firestore, "users", user.uid);
 
-// export const registerWithEmailAndPassword = async (name, email, password) => {
-//     try {
-//         const res = await createUserWithEmailAndPassword(auth, email, password);
-//         const user = res.user;
-//         await setDoc(q, {
-//             name: name,
-//             authProvider: "emailpassword",
-//             email: user.email
-//         });
-//     } catch (err) {
-//         console.error(err);
-//         alert(err.message);
-//     }
-// };
+        updateProfile(user, {
+            displayName: name,
+            }).then(() => {
+                console.log("Register ok");
+            }).catch((error) => {
+                console.log("Something went wrong");
+        });
+
+        await setDoc(q, {
+            name: name,
+            authProvider: "emailpassword",
+            email: user.email
+        });
+
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+    }
+};
 
 
 
@@ -92,11 +102,11 @@ export const logout = () => {
 
 
 
-// export const logInWithEmailAndPassword = async (email, password) => {
-//     try {
-//         await signInWithEmailAndPassword(auth, email, password);
-//     } catch (err) {
-//         console.error(err);
-//         alert(err.message);
-//     }
-//     };
+export const logInWithEmailAndPassword = async (email, password) => {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+    }
+};

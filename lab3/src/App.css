@@ -297,24 +297,24 @@ form > button{
 }
 
 button.btn-google {
-  background-image: url(../public/google-logo-from-builder.optimized.svg);
+  background-image: url(../public/social_google_plus_icon_156959.png);
   background-repeat: no-repeat;  /* make the background image appear only once */
-  background-position: 4px 4px;  /* equivalent to 'top left' */
+  background-position: 4px 2px;  /* equivalent to 'top left' */
   border: none;           /* assuming we don't want any borders */
   cursor: pointer;        /* make the cursor like hovering over an <a> element */
   /* height: 16px;           make this the size of your image */
-  padding-left: 30px;     /* make text start to the right of the image */
+  padding-left: 36px;     /* make text start to the right of the image */
   vertical-align: middle; /* align the text vertically centered */
 }
 
 button.btn-github {
   background-image: url(../public/GitHub-Mark-32px.png);
   background-repeat: no-repeat;  /* make the background image appear only once */
-  background-position: 4px 4px;  /* equivalent to 'top left' */
+  background-position: 4px 2px;  /* equivalent to 'top left' */
   border: none;           /* assuming we don't want any borders */
   cursor: pointer;        /* make the cursor like hovering over an <a> element */
   /* height: 16px;        /* make this the size of your image */
-  padding-left: 30px;     /* make text start to the right of the image */
+  padding-left: 38px;     /* make text start to the right of the image */
   vertical-align: middle; /* align the text vertically centered */
 }
 

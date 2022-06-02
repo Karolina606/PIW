@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom"
 import useLocalStorage from "../useLocalStorage";
 
 import { auth } from "../firebase/init.js";
-import { logInWithGoogle, logInWithGithub } from "../firebase/users";
+import { logInWithGoogle, logInWithGithub, logInWithEmailAndPassword } from "../firebase/users";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
@@ -53,34 +53,7 @@ const LogIn= (props) => {
         event.preventDefault();
 
         if (passes.inputEmail !== "" &&
-            passes.inputPassword !== ""){
-
-            //     console.log({accounts});
-            // for (let i = 0; i < accounts.length; i++){
-            //     console.log({accounts});
-            //     if(accounts[i]["email"] === passes.inputEmail && accounts[i]["password"] === passes.inputPassword){
-            //         setAccount(accounts[i]);
-
-            //         toast.success("Zostałeś zalogowany", {
-            //             position: "bottom-left",
-            //             autoClose: 5000,
-            //             hideProgressBar: false,
-            //             closeOnClick: true,
-            //             pauseOnHover: true,
-            //             draggable: true,
-            //             progress: undefined,
-            //         });
-        
-            //         setPasses({ 
-            //             inputEmail:"",
-            //             inputPassword:"",
-            //         });
-
-            //         navigate("/announcements");
-            //     }
-            // }  
-            
-                
+            passes.inputPassword !== ""){            
 
             axios.get("http://localhost:3000/PIW/lab3/accounts.json")
             .then(res => {
@@ -142,7 +115,7 @@ const LogIn= (props) => {
                 <button type="submit" className="btn btn-primary">Zaloguj się</button>
                 
                 <button className="btn btn-secondary"
-                    // onClick={() => logInWithEmailAndPassword(email, password)}
+                    onClick={() => logInWithEmailAndPassword(passes.inputEmail, passes.inputPassword)}
                 >
                     Login
                 </button>
@@ -154,7 +127,7 @@ const LogIn= (props) => {
                 </button>
                 <br/>
                 <div>
-                    Don't have an account? <Link to="/register">Register</Link> now.
+                    Don't have an account? <Link to="/signIn">Register</Link> now.
                 </div>
             </form>
 

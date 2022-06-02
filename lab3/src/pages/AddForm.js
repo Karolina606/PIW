@@ -3,10 +3,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
+import { auth } from "../firebase/init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { addNewAdd } from '../firebase/adds';
+
 
 const AddForm = (props) => {
     const setAdds = props.setAdds;
     const adds = props.announcementsState;
+
+    const [userInny] = useAuthState(auth);
 
 
     const [inputs, setInputs] = useState({ 
@@ -45,7 +51,9 @@ const AddForm = (props) => {
                     add_description: inputs.textareaDescription,
                     add_tags: inputs.inputTags,
                     picture: recieved_picture};
-        
+            
+                addNewAdd(userInny, newNewNode);
+                
                 setAdds({all: adds.all.concat([newNewNode]),
                     all_to_show: adds.all_to_show.concat([newNewNode])
                 });

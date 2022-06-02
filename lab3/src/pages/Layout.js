@@ -34,8 +34,24 @@ const Layout = () => {
         navigate("/announcements");
     }
     
-    if( account === "" && accountLS[0] === "account" ){
+    if( account === "" && accountLS[0] === "account" && userInny){
         accountButtons = <>
+            <li className="nav-item">
+                <Link to="/my_adds">Moje ogłoszenia</Link>
+            </li> 
+
+             <li className="log-in-nav-button nav-item">
+                <button onClick={logout}> Log Out with provider {userInny.displayName}</button>
+            </li> 
+ 
+        </>
+    }else if( account === "" && accountLS[0] === "account" ){
+        accountButtons = <>
+            {userInny
+            && <li className="nav-item">
+                <Link to="/my_adds">Moje ogłoszenia</Link>
+            </li> }
+
             <li className="log-in-nav-button nav-item">
                 <Link to="/logIn">Zaloguj się</Link>
             </li>
@@ -46,8 +62,7 @@ const Layout = () => {
             {userInny
             && <li className="log-in-nav-button nav-item">
                 <button onClick={logout}> Log Out with provider {userInny.displayName}</button>
-            </li> 
-            || <Link to="login_v2"> Log In </Link>}
+            </li> }
  
         </>
     } else{
