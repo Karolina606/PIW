@@ -18,3 +18,9 @@ Trzecie zadanie laboratoryjne. Strona pozwalająca studentom znaleźć grupę pr
 
 ## Lab 4
 Czwarte zadanie laboratoryjne. Umożliwiono logowanie użytkownika, śledzenie ogłoszeń, skorzystano z kontekstów i reducera. Tak jak było zaznaczone na zajęciach ("rejestracja na tym etapie nie jest niezbędna"), dlatego ją pominięto.
+
+## Lab 5
+Piąte zadanie laboratoryjne (Firebase). 
+* Umożliwiono logowanie użytkownika za pomocą google i github.
+* Umożliwiono rejestrację oraz logowanie za pomocą email i hasła,
+* Umożliwiono dodawanie oraz przechowywanie ogłoszeń w bazie firebase.
