@@ -4,12 +4,18 @@ import AccountContext from "../contexts/AccountContext";
 import { ToastContainer, toast } from 'react-toastify';
 import useLocalStorage from "../useLocalStorage";
 
+import {getAuth} from "firebase/auth"
+import { auth } from '../firebase/init';
+import {useAuthState} from "react-firebase-hooks/auth"
+import {logout} from "../firebase/users"
+
 const Layout = () => {
     const [account, setAccount] = useContext(AccountContext);
     const [accountLS, setAccountLS] = useLocalStorage(["account"], ["account"]);
     let accountButtons;
     const navigate = useNavigate();
 
+    const [userInny] = useAuthState(auth);
 
     const handleLogOutClick = (event) => {
         setAccount("");
@@ -30,19 +36,19 @@ const Layout = () => {
     
     if( account === "" && accountLS[0] === "account" ){
         accountButtons = <>
-            {/* <div class="main-nav-row row"> */}
-            {/* <div class="col col-lg-1" > */}
             <li className="log-in-nav-button nav-item">
                 <Link to="/logIn">Zaloguj się</Link>
             </li>
-            {/* </div> */}
-                {/* <div class="col col-lg-1" > */}
-                    <li className="sign-in-nav-button nav-item">
-                        <Link to="/signIn">Zarejestruj się</Link>
-                    </li>
-                {/* </div> */}
+            <li className="sign-in-nav-button nav-item">
+                <Link to="/signIn">Zarejestruj się</Link>
+            </li>
 
-            {/* </div>  */}
+            {userInny
+            && <li className="log-in-nav-button nav-item">
+                <button onClick={logout}> Log Out with provider {userInny.displayName}</button>
+            </li> 
+            || <Link to="login_v2"> Log In </Link>}
+ 
         </>
     } else{
         accountButtons = <>

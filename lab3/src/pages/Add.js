@@ -85,8 +85,8 @@ const Add = (props) => {
                     
                 {followButton}
                 
-                <NavLink to="/sendMessage" className="col col-lg-2">
-                    <button className="follow-button message-button-single">
+                <NavLink to="/sendMessage" className="col">
+                    <button className="follow-button follow-button-single col-lg-2">
                         Napisz wiadomość
                     </button>
                 </NavLink>

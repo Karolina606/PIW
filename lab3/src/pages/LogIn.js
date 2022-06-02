@@ -1,11 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import AccountContext from "../contexts/AccountContext";
 import AllAccountsContext from "../contexts/AllAccountsContext";
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 import useLocalStorage from "../useLocalStorage";
+
+import { auth } from "../firebase/init.js";
+import { logInWithGoogle, logInWithGithub } from "../firebase/users";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 
 
 const LogIn= (props) => {
@@ -19,6 +24,22 @@ const LogIn= (props) => {
         inputPassword:"",
     });
     
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const [user, loading, error] = useAuthState(auth);
+
+    useEffect(() => {
+        if (loading)
+            return
+        if (user)
+            navigate("/");
+        if(error)
+            console.error({error});
+        }, [user, loading]);
+
+
     const handleChange = (event) => {
         event.preventDefault();
 
@@ -119,6 +140,22 @@ const LogIn= (props) => {
                     placeholder="Hasło" value={passes.inputPassword || ""}></input>
                 </div>
                 <button type="submit" className="btn btn-primary">Zaloguj się</button>
+                
+                <button className="btn btn-secondary"
+                    // onClick={() => logInWithEmailAndPassword(email, password)}
+                >
+                    Login
+                </button>
+                <button onClick={logInWithGoogle} className="btn btn-secondary btn-google">
+                    Login with Google
+                </button>
+                <button onClick={logInWithGithub} className="btn btn-secondary btn-github">
+                    Login with Github
+                </button>
+                <br/>
+                <div>
+                    Don't have an account? <Link to="/register">Register</Link> now.
+                </div>
             </form>
 
             <ToastContainer

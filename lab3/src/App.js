@@ -15,11 +15,18 @@ import LogIn from './pages/LogIn';
 import SignIn from './pages/SignIn';
 import Student from './pages/Student';
 import Cart from './pages/Cart';
-
+import Loginv2 from './pages/Loginv2';
+import { Link } from 'react-router-dom';
 import AccountContext from './contexts/AccountContext';
 import AllAccountsContext from './contexts/AllAccountsContext';
 import { useReducer } from 'react';
 import { reducer, initState, ReducerContext } from './contexts/ReducerContext';
+
+
+// import {getAuth} from "firebase/auth"
+// import { auth } from './firebase/init';
+// import {useAuthState} from "react-firebase-hooks/auth"
+// import {logout} from "./firebase/users"
 
 function App() {
     const [adds, setAdds] = useState({});
@@ -28,6 +35,8 @@ function App() {
     // const [loudedAccounts, setLouded] = useState({});
 
     const [state, dispatcher] = useReducer(reducer, initState);
+    
+    // const [userInny] = useAuthState(auth);
 
     useEffect(() => {
         axios.get("http://localhost:3000/PIW/lab3/studentsAdds.json")
@@ -90,6 +99,7 @@ function App() {
             <ReducerContext.Provider value={[state, dispatcher]}>
             {/* <AllAccountsContext.Provider value={useState(loudedAccounts)}> */}
                 <main>
+                
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<Layout />}>
@@ -101,7 +111,7 @@ function App() {
                                 <Route path="logIn" element={<LogIn />} />
                                 <Route path="signIn" element={<SignIn />} />
                                 <Route path="student" element={<Student />} />
-                                <Route path="yourCart" element={<Cart />} />
+                                <Route path="login_v2" element={<Loginv2 />} />
                                 <Route path="*" element={<NoPage />} />
                             </Route>
                         </Routes>
