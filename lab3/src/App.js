@@ -24,11 +24,12 @@ import { reducer, initState, ReducerContext } from './contexts/ReducerContext';
 import MyAdds from './pages/MyAdds';
 
 
-// import {getAuth} from "firebase/auth"
-// import { auth } from './firebase/init';
-// import {useAuthState} from "react-firebase-hooks/auth"
-// import {logout} from "./firebase/users"
-import { getAllAdds, setAdds } from './firebase/adds';
+import {getAuth} from "firebase/auth"
+import { auth } from './firebase/init';
+import {useAuthState} from "react-firebase-hooks/auth"
+import {logout} from "./firebase/users"
+import { getAllAdds, getAllGroupAdds, setAdds } from './firebase/adds';
+import EditAdd from './pages/EditAdd';
 
 function App() {
     const [adds, setAdds] = useState({});
@@ -38,7 +39,7 @@ function App() {
 
     const [state, dispatcher] = useReducer(reducer, initState);
     
-    // const [userInny] = useAuthState(auth);
+    const [userInny] = useAuthState(auth);
 
     useEffect(() => {
         axios.get("http://localhost:3000/PIW/lab3/studentsAdds.json")
@@ -72,7 +73,13 @@ function App() {
         
         axios.get("http://localhost:3000/PIW/lab3/groupsAdds.json")
         .then(res => {
-            setGroupAdds(res.data);
+            let allGroupAdds = res.data;
+            getAllGroupAdds().then(
+                listOfAdds => {
+                    allGroupAdds.all = allGroupAdds.all.concat(listOfAdds);
+                    allGroupAdds.all_to_show = allGroupAdds.all_to_show.concat(listOfAdds);
+                });
+            setGroupAdds(allGroupAdds);
         });
 
         
@@ -118,12 +125,13 @@ function App() {
                                 <Route path="addForm" element={<AddForm announcementsState={adds} setAdds={setAdds} />} />
                                 <Route path="sendMessage" element={<MessageSender />} />
                                 <Route path="groupAnnouncements" element={<GroupAnnouncements groupAnnouncementsState={groupAdds} setGroupAdds={setGroupAdds} />} />
-                                <Route path="groupAddForm" element={<GroupAddForm groupAdds={groupAdds} setGroupAdds={setGroupAdds}/>} />
+                                <Route path="groupAddForm" element={<GroupAddForm groupAdds={groupAdds} setGroupAdds={setGroupAdds} userInny={userInny}/>} />
                                 <Route path="logIn" element={<LogIn />} />
                                 <Route path="signIn" element={<SignIn />} />
                                 <Route path="student" element={<Student />} />
                                 <Route path="login_v2" element={<Loginv2 />} />
                                 <Route path="my_adds" element={<MyAdds />} />
+                                <Route path="edit_add" element={<EditAdd />} />
                                 <Route path="*" element={<NoPage />} />
                             </Route>
                         </Routes>

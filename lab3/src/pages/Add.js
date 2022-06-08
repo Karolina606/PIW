@@ -4,8 +4,12 @@ import { initState, reducer, ReducerContext } from "../contexts/ReducerContext";
 import { useReducer } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {getAuth} from "firebase/auth"
+import { auth } from '../firebase/init.js';
+import {useAuthState} from "react-firebase-hooks/auth"
 
 const Add = (props) => {
+    const add_id = props.add_id;
     const add_student_name = props.add_student_name;
     const add_class_name = props.add_class_name;
     const add_description = props.add_description;
@@ -15,6 +19,7 @@ const Add = (props) => {
     let followButton;
 
     const [state, dispatcher] = useReducer(reducer, initState);
+    const [userInny] = useAuthState(auth);
 
     // console.log({props});
     if(accountLS[0] !== "account" && props.if_in_cart === false){
@@ -67,6 +72,10 @@ const Add = (props) => {
         </>
     }
 
+
+    console.log({userInny});
+    // console.log({add_student_name});
+
     return <div className="add-class row">
                 <div className="add-text-info col">
                     <h2 className="add-class-name" > {add_class_name} </h2>
@@ -90,6 +99,20 @@ const Add = (props) => {
                         Napisz wiadomość
                     </button>
                 </NavLink>
+
+                <Link to={"/edit_add"} className="col"
+                        state={{
+                            add_id:{add_id},
+                            add_student_name:{add_student_name},
+                            add_class_name:{add_class_name},
+                            add_description:{add_description},
+                            add_tags:{add_tags},
+                        }}>
+                    {userInny && userInny.displayName === props.add_student_name &&
+                    <button className="follow-button follow-button-single col-lg-2">
+                        Edytuj
+                    </button>}
+                </Link>
                 
                 <img className="student-photo col col-lg-2" src={picture} alt="student_photo" />
 

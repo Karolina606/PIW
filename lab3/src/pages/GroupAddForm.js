@@ -3,11 +3,13 @@ import React from "react";
 // import ReactDOM from "react-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { addNewGroupAdd } from "../firebase/adds";
 
 
 class GroupAddForm extends React.Component {
     // const this.props.setGroupAdds = props.this.props.setGroupAdds;
     // const this.props.groupAdds = props.announcementsState;
+
     constructor(props){
         super(props);
         this.state = {
@@ -82,6 +84,8 @@ class GroupAddForm extends React.Component {
                 add_class_name: this.state.inputClassName,
                 add_description: this.state.textareaDescription,
                 add_tags: this.state.inputTags};
+
+            addNewGroupAdd(this.props.userInny, newNewNode);
     
 
             this.props.setGroupAdds({all: this.props.groupAdds.all.concat([newNewNode]),
